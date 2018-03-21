@@ -1,5 +1,5 @@
 import numpy as np
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageEnhance
 import math
 import random
 import os, shutil
@@ -133,7 +133,7 @@ def d_sigmoid(z):
     return sigmoid(z)*(1.0-sigmoid(z))
 
 def handle_img(pixel):
-    threashold = 125
+    threashold = 100
     if pixel < threashold:
         return 0
     return pixel

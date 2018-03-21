@@ -5,3 +5,5 @@ env/
 repos/
 trainning/
 test/
+*.npy/
+npy.py
