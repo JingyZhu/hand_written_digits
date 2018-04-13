@@ -7,3 +7,5 @@ trainning/
 test/
 *.npy/
 npy.py
+.DS_Store/
+*egg-info/

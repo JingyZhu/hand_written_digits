@@ -20,7 +20,8 @@ class Network:
                 self.weight.append(np.random.randn(layer[i], layer[i-1]))
                 self.bias.append(np.random.randn(layer[i], 1))
         else:
-            directory = os.path.join('config', directory)
+            dirname = os.path.dirname(os.path.realpath(__file__))
+            directory = os.path.join(dirname,'config', directory)
             allfile = os.listdir(directory)
             weight = filter(lambda x: x.startswith('weight'), allfile)
             bias = filter(lambda x: x.startswith('bias'), allfile)
@@ -111,7 +112,8 @@ class Network:
         return a-y
     
     def save_to_files(self, path):
-        path = os.path.join('config', path)
+        dirname = os.path.dirname(os.path.realpath(__file__))
+        path = os.path.join(dirname, 'config', path)
         if os.path.isdir(path):
             shutil.rmtree(path)
         os.makedirs(path)
